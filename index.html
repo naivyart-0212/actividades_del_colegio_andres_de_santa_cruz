@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ANDRÉS DE SANTA CRUZ — Actividades</title>
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav">
+      <div class="brand">
+        <img src="imagenes/logo.jpg" width="100" height="100">
+        <div class="logo" aria-hidden="true">AS</div>
+        <div>
+          <h1>ANDRÉS DE SANTA CRUZ</h1>
+          <p>Unidad Educativa Andres de Santa Cruz</p>
+        </div>
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="mainNav" title="Abrir menú">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+
+        <ul id="mainNav" role="menubar" aria-hidden="false">
+          <li role="none"><a role="menuitem" href="#inicio">INICIO</a></li>
+          <li role="none"><a role="menuitem" href="#actividades">ACTIVIDADES</a></li>
+          <li role="none"><a role="menuitem" href="#calendario">CALENDARIO</a></li>
+          <li role="none"><a role="menuitem" href="#galeria">GALERÍA</a></li>
+          <li role="none"><a role="menuitem" href="#biografia">BIOGRAFÍA</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container" role="main">
+    <section id="inicio" class="hero" aria-labelledby="inicio-title">
+      <img class="hero-img" src="imagenes/13.jpg" alt="Imagen principal - alumnos en actividades escolares">
+      <div class="overlay" role="presentation">
+        <div class="welcome-card fadeIn" id="inicio-title">
+          <span class="tag">Bienvenida</span>
+          <h2>Bienvenidos a la Unidad Educativa "ANDRÉS DE SANTA CRUZ"</h2>
+          <p>Un lugar donde la formación académica se combina con la cultura, el deporte y el servicio comunitario. 
+             Aquí encontrarás información sobre nuestras actividades, calendario anual, galería de fotos y la biografía institucional.</p>
+          <div class="cta-row" role="group">
+            <button class="btn-primary" onclick="document.querySelector('#actividades').scrollIntoView({behavior:'smooth'})">Ver Actividades</button>
+            <button class="btn-outline" onclick="document.querySelector('#calendario').scrollIntoView({behavior:'smooth'})">Calendario</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="actividades" aria-labelledby="act-title">
+      <div class="section-title">
+        <h3 id="act-title">ACTIVIDADES</h3>
+        <p> A cntinuación se presentaran 12 actividades organizadas en una cuadrícula de 3 columnas por 3 filas, cada tarjeta incluye imagen, título, descripción y un botón para ver más detalles sobre estas actividades.</p>
+      </div>
+      <div class="controls" role="toolbar" aria-label="Controles de actividades">
+        <div class="search" role="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="opacity:0.6"><path d="M21 21l-4.35-4.35" stroke="#2d2d2d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6.5" stroke="#2d2d2d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <input id="searchInput" placeholder="Buscar actividad (ej: feria, taller, campeonato)" aria-label="Buscar actividad">
+        </div>
+        <button class="filter" id="showAllBtn">Mostrar todo</button>
+        <button class="filter" id="sportsFilter">Deportes</button>
+        <button class="filter" id="cultureFilter">Cultura</button>
+        <button class="filter" id="scienceFilter">Ciencia</button>
+      </div>
+
+      <div class="grid-3" id="activitiesGrid" role="list">
+        <article class="card" role="listitem" data-tags="ceremonia,inicio">
+          <img src="imagenes/37.jpg" alt="Inicio de Clases">
+          <h4>Inicio de Clases</h4>
+          <p>Ceremonia inaugural que marca el inicio de un nuevo año escolar en la Unidad Eeducativa recibiendo a los estudiantes con alegria y emoción con la hiza de la bandera, himnos, palabras de bienvenida por parte del director de la Unidad Educativa hacia los estudiantes recomendando que tengan un buen inicio de año y que les valla bien en sus estudios.</p>
+          <div class="meta">Fecha: Primera Semana de Febrero• Lugar: Establecimiento de la Unidad Educativa</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="Acto de Inicio" data-img="imagenes/31.jpg" data-desc="Ceremonia inaugural con participación de estudiantes, autoridades y padres. Programación: 08:00 - 11:00.">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('Acto de Apertura','2025-03-10')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" data-tags="Aniversario">
+          <img src="imagenes/26.jpg" alt="Aniversario de la Unidad Educativa">
+          <h4>Aniversario de la Unidad Educativa</h4>
+          <p>Cada año la Unidad Educativa celebra con orgullo y alegria un nuevo aniversario, recordando la historia, el crecimiento, el esfuerzo de los estudiantes, padres de familiay profesores, durante esta fecha se realizan diversas actividades deportivas, recreativas y sociales que fortalecen los valores entre estudiantes,profesores y padres de familia.
+          El aniversario es una oportunidad de reafirmar los valores institucionales.</p>
+          <div class="meta">Fecha: Marzo • Lugar: Patio central</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="Feria de Ciencias" data-img="imagenes/32.jpg" data-desc="Actividades en honor al aniversario toda una semana">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('Aniversario','2025-05-22')">Agregar</button>
+          </div>
+        </article>
+        <article class="card" data-tags="Día del Padre">
+          <img src="imagenes/23.jpg">
+          <h4>Día del Padre</h4>
+          <p>En la Unidad Educativa se celebra el día del Padre con alegria y cariño, los estudiantes preparan presentaciones, como bailes o un acto en conmemoración a su día también se hace la preparación de un plato para que degusten los padres en su día especial, por otro lado cada curso hace dos canastones como un regalo para el padre.</p>
+          <div class="meta">Fecha: Marzo (varios días) • Lugar: Canchas</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="DIA DEL PADRE" data-img="imagenes/44.jpg" data-desc="Agazajo a los padres.">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('Día del padre','2025-06-05')">Agregar</button>
+          </div>
+        </article>
+        <article class="card" data-tags="recoleccion">
+          <img src="imagenes/43.jpg" alt="Primera campaña de recoleccion del P.S.S">
+          <h4>Primera campaña de recoleccion del P.S.S</h4>
+          <p>En la Unidad Educativa Andrés de Santa Cruz se lleva acabo la primera campaña de recoleccion de latas y botellas esta actividad fomenta el cuidado del medio ambiente y conciencia ecológica, el asesor del curso 6toA junto con la paraticipacion de los estudiantes, contribuiran con la recolección y clasificación de materiales reciclables, gracias  al trabajo en equipo y el compromiso de todos los participantes, la campaña será un exito.</p>
+          <div class="meta">Frecuencia: Trimestral • Responsable: Prof. Lara</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="Primera campaña de recoleccion del P.S.S" data-img="imagenes/3.jpg" data-desc="Recoleccion de distintos materiales reciclables.">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('Primera campaña de recoleccion del P.S.S','2025-04-07')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" data-tags="partidos">
+          <img src="imagenes/28.jpg" alt="Partidos intercolegial">
+          <h4>Partidos intercolegial</h4>
+          <p>La Unidad Eductiva participa con entusiasmo en los intercolegiales de futsal, un evento que reune a distintas Unidades Educativas en un ambiente de deporte y compañerismo tanto los equipos femeninos como masculinos representan con orgullo a su institución demostrando talento, disciplina y trabajo en equipo.</p>
+          <div class="meta">• Lugar: Biblioteca</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="partidos" data-img="imagenes/8.jpg" data-desc=" campeonatos futsal entre colegios de distintos cursos.">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('2025-04-18')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" data-tags="comunitario">
+          <img src="imagenes/34.jpg" alt="Día de la Madre">
+          <h4>Día de la Madre</h4>
+          <p>El día de la Madre es una fecha especial en la que los estudiantes expresan el amor hacia sus madres, estuantes preparan diversas actividades para homenajear a las madres, como poesías, bailes y se realizan por cada curso dos canastones como un regalo por su día y se realiza un plato especial.</p>
+          <div class="meta">27 de Mayo • Coordinador: </div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="Proyecto Comunitario" data-img="imagenes/45.jpg" data-desc="Agazajo a las madres en su día">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('Proyecto Comunitario','2025-08-03')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" data-tags="Venta de productos">
+          <img src="imagenes/7.jpg" alt="Santa Anitta">
+          <h4>Santa Anitta</h4>
+          <p>Es una tradición muy especial que se celebra con alegria y creatividad, en esta fecha cada curso realiza una preparación en miniatura, los estudiantes participan con entusiasmo en esta actividad, mostrando su imaginación y habilidades, además de que se organizan los juegos y exposiciones de sus platos donde la comunidad compran mediante una ficha el plato que se les apetece y les damos a conocer el valor de la cultura.</p>
+          <div class="meta">Horario: Tarde • Docente: Área TIC</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="Santa Anitta" data-img="imagenes/46.jpg" data-desc="Santa Anitta.">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('Santa Anitta','2025-06-18')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" data-tags="Recolección">
+          <img src="imagenes/47.jpg" alt="Segunda Campaña de Recolección">
+          <h4>Segunda Campaña de Recolección</h4>
+          <p>Se lleva acabo en la Unidad Educativa la segunda campaña de recoleccioón de latas y botellads donde los estudiantes del 6toB son encargados de ayudar en esta actividad junto con los asesores de curso y profesores ya que toda la Unidad Educativa participa recolectando sus latas y botellas.</p>
+          <div class="meta">Fecha: Septiembre • Modalidad: Stands</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="Segunda Campaña de Recolección" data-img="imagenes/50.jpg"  data-desc="Campaña de recoleccion de latas y botellas." >Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('Segunda Campaña de Recolección','2025-09-29')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" data-tags="futbol">
+          <img src="imagenes/12.jpg" alt="Campeonato de Intercursos">
+          <h4>Campeonato de Intercursos</h4>
+          <p>Es una de las actividades más esperadas del año en la Unidad Educativa, en este evento los estudiantes de los diferentes cursos compiten en distintas categorias demostrando su talentpo, esfuerzo y espiritu de equipo , durante el campeonato reina un ambiente de alegria, compañerismo y sana competencia, los profesores y la dirección del colegio apoyan a los estudiantes, fomrntnado el deporte y la union entre compañeros, este campeonato no solo busca premiar a los equipos ganadores sino también promover los valores de la amistad, el respeto y la disciplina.</p>
+          <div class="meta">Septiembre • Escenario: Plaza escolar</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="Campeonato de Intercursos" data-img="imagenes/20.jpg" data-desc="Campeonato entre dintintos cursos de la Unidad Educativa.">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('Campeonato de Intercursos','2025-09-15')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" data-tags="Agazajo al estudiante">
+          <img src="imagenes/30.jpg" alt="Día del Estudiante">
+          <h4>Día del Estudiante</h4>
+          <p>El día del Estudiante se celebra cada 21 de septiembre para reconocer el esfuerzo la dedicación de todos los estudiantes es una fecha ewpecial en la que se hace una actividad de convivencia compartiendo un plato de comida entre todos los estudiantes de cada curso realizando bailes, los profesores y la dirección del colegio ayudan junto con los padres a organizar esta celebración con el fin d motivar a los alumnos y recordarles la importancia de la educación en su futuro.</p>
+          <div class="meta">Fecha: Junio (varios días) • Lugar: Canchas</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="dia del estudiante" data-img="imagenes/48.jpg" data-desc="Competencias por categorías: prejuvenil, juvenil. Actividades: celebracion con bailes y musica.">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('2025-06-05')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" data-tags="recolección">
+          <img src="imagenes/54.jpg" alt="Campaña de recolección">
+          <h4>Tercera campaña de Recolección</h4>
+          <p>Se lleva acabo en la Unidad Educativa la última campaña de recoleccioón de latas y botellads del añp donde los estudiantes del 6toC son los encargados de ayudar en esta actividad junto con los asesores de su curso y profesores ya que toda la Unidad Educativa participa recolectando sus latas y botellas.</p>
+          <div class="meta">Fecha: Junio (varios días) • Lugar: Canchas</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="recolección" data-img="imagenes/52.jpg" data-desc="latas y botellas 100 y 100">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('2025-06-05')">Agregar</button>
+          </div>
+        </article>
+
+        <article class="card" data-tags="Acto de Fin de Año">
+          <img src="imagenes/42.jpg" alt="Acto de Fin de Año">
+          <h4>Acto de Fin de Año</h4>
+          <p>Es un acto donde se cierran lasn actividades acádemicas y se reconoce el esfuerzo de todos los estudiantes y profesores durante este evento se presentan palabras de despedida,ultima convivencia como curso los alumnos destacados reciben su entrega de certificados, es un momento lleno de emoción y gratitud, en el que se reflexiona sobre todo lon aprendido durante el año escolar.</p>
+          <div class="meta">Fecha: Junio (varios días) • Lugar: Canchas</div>
+          <div class="card-actions">
+            <button class="btn" data-type="actividad" data-title="Acto de Fin de Año" data-img="imagenes/55.jpg" data-desc="Acto de Fin de Año">Ver más</button>
+            <button class="btn-secondary" onclick="addToCalendar('2025-06-05')">Agregar</button>
+          </div>
+        </article>
+      </div>
+      <p class="muted" style="margin-top:12px">Haz clic en "Ver más" para abrir la información completa de cada actividad. Usa los filtros para acotar resultados.</p>
+    </section>
+    <section id="calendario" aria-labelledby="cal-title">
+      <div class="section-title">
+        <h3 id="cal-title">CALENDARIO</h3>
+        <p>Listado de los 12 meses con fechas de actos, ferias, campeonatos y actividades escolares.</p>
+      </div>
+
+      <div class="calendar-actions" style="margin-bottom:12px">
+        <button class="btn-ghost" onclick="exportCalendar()">Exportar calendario (texto)</button>
+        <button class="btn-ghost" onclick="highlightMonth()">Destacar mes actual</button>
+        <div style="flex:1"></div>
+        <div class="muted">Haz clic en un mes para ver/ocultar más detalles.</div>
+      </div>
+
+      <div class="months" id="monthsGrid" role="list">
+        <div class="month" data-month="Enero" role="listitem">
+          <h5>Enero</h5>
+          <ul class="events">
+            <li><strong>13/01</strong> - Inicio de inscripciones y recepción de documentación.</li>
+
+          </ul>
+        </div>
+        <div class="month" data-month="Febrero" role="listitem">
+          <h5>Febrero</h5>
+          <ul class="events">
+            <li><strong>03/02</strong> - Inicio de clases.</li>
+            <li><strong>24/02</strong> - Arreglo de aulas.</li>
+            <li><strong>27/02</strong> - Concurso de ortografía intergrados.</li>
+          </ul>
+        </div>
+        <div class="month" data-month="Marzo" role="listitem">
+          <h5>Marzo</h5>
+          <ul class="events">
+            <li><strong>07/03</strong> - Embanderamiento (Desfile de teas).</li>
+            <li><strong>08/03</strong> - Saludación con petardos(ANIVASARIO DEL COLEGIO.</li>
+            <li><strong>10/03</strong> - Misa de accion de Gracias.</li>
+            <li><strong>11/03</strong> - Bautizo de bienvenida(Farándula estudiantil).</li>
+            <li><strong>15/03</strong> - Juegos Estudiantiles.</li>
+            <li><strong>19/03</strong> - Día del Padre.</li>
+            <li><strong>21/03</strong> - Día de campo en Toroyo.</li>
+          </ul>
+        </div>
+        <div class="month" data-month="Abril" role="listitem">
+          <h5>Abril</h5>
+          <ul class="events">
+            <li><strong>03/04</strong> - Olimpiadas cientificas Plurinacional.</li>
+            <li><strong>26/04</strong> - Primera Campaña del P.S.P.</li>
+            <li><strong>28/04</strong> - Partidos de diferentes colegios.</li>
+          </ul>
+        </div>
+        <div class="month" data-month="Mayo" role="listitem">
+          <h5>Mayo</h5>
+          <ul class="events">
+            <li><strong>11/05</strong> - Nuevo horario(cambio de clima frío).</li>
+            <li><strong>19/05</strong> - Día del Pdre.</li>
+            <li><strong>27/05</strong> - Día de la Madre.</li>
+          </ul>
+        </div>
+        <div class="month" data-month="Junio" role="listitem">
+          <h5>Junio</h5>
+          <ul class="events">
+            <li><strong>05/06</strong> - Inicio del Campeonato Deportivo (fase local).</li>
+          </ul>
+        </div>
+        <div class="month" data-month="Julio" role="listitem">
+          <h5>Julio</h5>
+          <ul class="events">
+            <li><strong>08/07</strong> - clases normales</li>
+            
+          </ul>
+        </div>
+        <div class="month" data-month="Agosto" role="listitem">
+          <h5>Agosto</h5>
+          <ul class="events">
+            <li><strong>08/08</strong> - Santa Anita.</li>
+            <li><strong>30/08</strong> - Segunda Campaña DEL P.S.S .</li>
+          </ul>
+        </div>
+        <div class="month" data-month="Septiembre" role="listitem">
+          <h5>Septiembre</h5>
+          <ul class="events">
+            <li><strong>12/09</strong> - Toma de Nombre.</li>
+            <li><strong>21/09</strong> - Campeonato intercursos de fútbol.</li>
+            <li><strong>22/09</strong> - Festejo por el día del estudiante.</li>
+            <li><strong>23/09</strong> - Cambio de horario(por el clima del calor).</li>
+          </ul>
+        </div>
+        <div class="month" data-month="Octubre" role="listitem">
+          <h5>Octubre</h5>
+          <ul class="events">
+            <li><strong>14/10</strong> - Fotos  de la Promoción (para el mosaico y las invitaciones).</li>
+            <li><strong>13/10</strong> - Presentacion de las macotas(Participa todos los cursos).</li>
+            <li><strong>28/10</strong> - Reunión pedagógica: evaluación continua.</li>
+          </ul>
+        </div>
+        <div class="month" data-month="Noviembre" role="listitem">
+          <h5>Noviembre</h5>
+          <ul class="events">
+            <li><strong>05/11</strong> - Evaluaciones finales (inicio).</li>
+            <li><strong>20/11</strong> - Presentación de proyectos integradores.</li>
+            <li><strong>28/11</strong> - Clausura de programas de apoyo extracurricular.</li>
+          </ul>
+        </div>
+        <div class="month" data-month="Diciembre" role="listitem">
+          <h5>Diciembre</h5>
+          <ul class="events">
+           
+            <li><strong>10/12</strong> - Clausura oficial del año escolar.</li>
+
+          </ul>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:12px">Sugerencia: personaliza las fechas según el cronograma real de tu institución.</p>
+    </section>
+    <section id="galeria" aria-labelledby="gal-title">
+      <div class="section-title">
+        <h3 id="gal-title">GALERÍA</h3>
+        <p>Imágenes de las actividades escolares más destacadas, presentadas en una cuadrícula 3×3.</p>
+      </div>
+
+      <div class="gallery-grid" role="list">
+        <img src="imagenes/15.jpg" alt="Mojazon" data-large="https://via.placeholder.com/1600x1200?text=Foto+1" role="listitem">
+        <img src="imagenes/24.jpg" alt="Desfile Civico" data-large="https://via.placeholder.com/1600x1200?text=Foto+2" role="listitem">
+        <img src="imagenes/4.jpg" alt="Misa por Aniversario del Colegio" data-large="https://via.placeholder.com/1600x1200?text=Foto+3" role="listitem">
+        <img src="imagenes/25.jpg" alt="Día de Campo" data-large="https://via.placeholder.com/1600x1200?text=Foto+6" role="listitem">
+        <img src="imagenes/29.jpg" alt="Banda de Música" data-large="https://via.placeholder.com/1600x1200?text=Foto+4" role="listitem">
+        <img src="imagenes/36.jpg" alt=" Marcha contra la Violencia" data-large="https://via.placeholder.com/1600x1200?text=Foto+5" role="listitem">
+        <img src="imagenes/22.jpg" alt="No a ls Violencia" data-large="https://via.placeholder.com/1600x1200?text=Foto+6" role="listitem">
+        <img src="imagenes/33.jpg" alt="Toma de Nombre" data-large="https://via.placeholder.com/1600x1200?text=Foto+8" role="listitem">
+        <img src="imagenes/40.jpg" alt="Misa por el día contra la violencia" data-large="https://via.placeholder.com/1600x1200?text=Foto+7" role="listitem">
+      </div>
+
+      <p class="muted" style="margin-top:12px">Haz clic en cualquier imagen para verla en tamaño grande con su descripción.</p>
+    </section>
+    <section id="biografia" aria-labelledby="bio-title">
+      <div class="section-title">
+        <h3 id="bio-title">BIOGRAFÍA</h3>
+        <p>Resumen de la historia, mision y valores de la Unidad Educativa Andrés de Santa Cruz.</p>
+      </div>
+
+      <div class="bio-grid">
+        <div>
+          <div class="bio-card">
+            <h4 style="margin-top:0">Nuestra Historia</h4>
+            <p class="muted">La Unidad Educativa “Andrés de Santa Cruz” es una institución fiscal que pertenece al subsistema de Educación Regular y se encuentra ubicada en el barrio Villa Fátima, zona noroeste de la ciudad de Tupiza, en la provincia Sud Chichas del departamento de Potosí. Su creación responde a la necesidad de brindar educación de calidad a los niños, niñas y jóvenes de esta zona, que en los años noventa experimentaba un notable crecimiento poblacional.
+
+            La unidad educativa fue fundada el 8 de marzo de 1993, fecha que marca el inicio oficial de sus actividades académicas. En sus primeros años, la institución funcionó con recursos limitados, en un pequeño ambiente adaptado, donde un grupo de docentes comprometidos y padres de familia entusiastas unieron esfuerzos para hacer realidad el sueño de contar con un colegio propio. Con el paso del tiempo, la unidad fue creciendo en infraestructura, mobiliario y número de estudiantes, gracias al apoyo de las autoridades educativas, del municipio y de la comunidad.
+
+            El nombre de la institución rinde homenaje al Mariscal Andrés de Santa Cruz y Calahumana, destacado militar y político boliviano-peruano, símbolo de integración, disciplina y liderazgo. Este nombre fue elegido para reflejar los ideales de unión, fortaleza y trabajo por la patria, valores que hoy forman parte del espíritu institucional.
+
+            A lo largo de sus 25 años de vida, la Unidad Educativa “Andrés de Santa Cruz” ha formado generaciones de estudiantes con una educación técnico humanística, basada en los principios de la Ley Avelino Siñani – Elizardo Pérez (Ley 070), que promueve una formación integral, inclusiva y comunitaria. El colegio se caracteriza por fomentar el desarrollo del pensamiento crítico, la práctica de valores, la responsabilidad social y el compromiso con el medio ambiente.
+
+            Durante su trayectoria, la institución ha logrado importantes avances en los ámbitos académico, cultural, científico y deportivo, alcanzando reconocimientos locales, departamentales y nacionales. Los estudiantes han participado con éxito en olimpiadas científicas, ferias educativas, actividades cívicas y campeonatos intercolegiales, representando con orgullo a su institución y a la ciudad de Tupiza.
+
+            La unidad educativa también ha apostado por la mejora constante de su infraestructura. Gracias a la colaboración del Gobierno Municipal, de los padres de familia y del plantel docente, se han construido nuevos ambientes, laboratorios, talleres y espacios recreativos que brindan mejores condiciones para el aprendizaje. De igual manera, se ha trabajado en la implementación de tecnologías y materiales pedagógicos modernos para fortalecer la calidad educativa.
+
+            El personal docente ha sido siempre uno de los pilares fundamentales de la institución. Su dedicación y compromiso han permitido consolidar un proyecto educativo que combina la enseñanza científica con la formación en valores. El Centro de Estudiantes, por su parte, ha tenido un papel protagónico en la promoción de actividades que fortalecen la identidad institucional y la participación democrática.
+
+            En el año 2018, la Unidad Educativa “Andrés de Santa Cruz” celebró con orgullo sus Bodas de Plata, recordando 25 años de esfuerzo, perseverancia y crecimiento. Este aniversario no solo significó una mirada al pasado, sino también un compromiso hacia el futuro: continuar formando hombres y mujeres capaces de transformar positivamente su entorno.
+
+            La institución se ha consolidado como una de las más representativas de la ciudad de Tupiza. Su lema, su disciplina y su espíritu comunitario reflejan el compromiso con la educación boliviana y con la formación de nuevas generaciones de ciudadanos que contribuyan al desarrollo del país con conocimiento, identidad y valores.</p>
+
+            <h5 style="margin-top:12px">Misión</h5>
+            <p class="muted">Formar ciudadanos críticos, creativos y solidarios mediante una educación de calidad, inclusiva y ética. Promovemos competencias académicas junto a
+               habilidades socioemocionales y responsabilidad ambiental.</p>
+
+            <h5 style="margin-top:12px">Valores</h5>
+            <ul class="muted">
+              <li>Responsabilidad</li>
+              <li>Respeto</li>
+              <li>Solidaridad</li>
+              <li>Creatividad</li>
+              <li>Compromiso social</li>
+            </ul>
+
+        <aside class="bio-photo" aria-label="Foto institucional">
+          <img src="imagenes/56.jpg" alt="Foto institucional de la Unidad Educativa">
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© <strong>Unidad Educativa Andrés de Santa Cruz</strong></p>
+    </div>
+  </footer>
+  <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true" role="dialog" aria-label="Detalles">
+    <div class="modal" role="document">
+      <button class="close" id="closeModal" aria-label="Cerrar">×</button>
+      <div id="modalContent" style="clear:both"></div>
+    </div>
+  </div>
+  <script>
+    function $(sel){ return document.querySelector(sel) }
+    function $all(sel){ return Array.from(document.querySelectorAll(sel)) }
+    const menuBtn = $('#menuBtn');
+    const mainNav = $('#mainNav');
+    menuBtn && menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      if (!expanded) {
+        mainNav.style.display = 'flex';
+        mainNav.style.flexDirection = 'column';
+        mainNav.style.position = 'absolute';
+        mainNav.style.right = '18px';
+        mainNav.style.top = '66px';
+        mainNav.style.background = 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95))';
+        mainNav.style.padding = '10px';
+        mainNav.style.borderRadius = '10px';
+        mainNav.style.boxShadow = '0 12px 30px rgba(10,10,30,0.12)';
+      } else {
+        mainNav.removeAttribute('style');
+      }
+    });
+
+    
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 640) {
+        mainNav.removeAttribute('style');
+        menuBtn && menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+
+    
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalContent = document.getElementById('modalContent');
+    const closeModal = document.getElementById('closeModal');
+
+    function openModal(html){
+      modalContent.innerHTML = html;
+      modalBackdrop.style.display = 'flex';
+      modalBackdrop.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModalFunc(){
+      modalBackdrop.style.display = 'none';
+      modalBackdrop.setAttribute('aria-hidden','true');
+      modalContent.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+    closeModal.addEventListener('click', closeModalFunc);
+    modalBackdrop.addEventListener('click', (e) => { if (e.target === modalBackdrop) closeModalFunc(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModalFunc(); });
+
+    
+    document.querySelectorAll('button[data-type="actividad"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.dataset.title || 'Actividad';
+        const img = btn.dataset.img || '';
+        const desc = btn.dataset.desc || 'Descripción no disponible';
+        const html = `
+          <h3 style="margin-top:0">${title}</h3>
+          <img src="${img}" alt="${title}">
+          <p style="color:#444;line-height:1.5;margin-top:12px">${desc}</p>
+          <p style="margin-top:8px;color:#666;font-size:13px">Contacto: Secretaría • Tel: (000) 000-000 • Email: secretaria@andres.edu</p>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <button class="btn-primary" onclick="closeModalFunc();">Cerrar</button>
+            <button class="btn-secondary" onclick="addToCalendar('${title}',null);closeModalFunc();">Agregar a mi calendario</button>
+          </div>
+        `;
+        openModal(html);
+      });
+    });
+
+    
+    document.querySelectorAll('.gallery-grid img').forEach(imgEl => {
+      imgEl.addEventListener('click', () => {
+        const src = imgEl.dataset.large || imgEl.src;
+        const alt = imgEl.alt || 'Imagen de galería';
+        openModal(`<h3 style="margin-top:0">${alt}</h3><img src="${src}" alt="${alt}"><p class="muted" style="margin-top:8px">Descripción: ${alt}. Puedes cambiar el pie de foto según la actividad.</p>`);
+      });
+    });
+
+    
+    $all('.month').forEach(month => {
+      month.addEventListener('click', () => {
+        const isOpen = month.classList.contains('open');
+        
+        $all('.month.open').forEach(m => m.classList.remove('open'));
+        if (!isOpen) {
+          month.classList.add('open');
+          
+          month.scrollIntoView({behavior:'smooth',block:'center'});
+        } else {
+          month.classList.remove('open');
+        }
+      });
+    });
+
+    
+    const searchInput = $('#searchInput');
+    const showAllBtn = $('#showAllBtn');
+    const sportsFilter = $('#sportsFilter');
+    const cultureFilter = $('#cultureFilter');
+    const scienceFilter = $('#scienceFilter');
+    const activitiesGrid = $('#activitiesGrid');
+
+    function filterActivities(keyword){
+      const kw = (keyword || '').toLowerCase();
+      const cards = activitiesGrid.querySelectorAll('.card');
+      cards.forEach(card => {
+        const title = (card.querySelector('h4')?.textContent || '').toLowerCase();
+        const p = (card.querySelector('p')?.textContent || '').toLowerCase();
+        const tags = (card.dataset.tags || '').toLowerCase();
+        const matches = (!kw) || title.includes(kw) || p.includes(kw) || tags.includes(kw);
+        card.style.display = matches ? 'flex' : 'none';
+      });
+    }
+
+    searchInput && searchInput.addEventListener('input', (e) => {
+      filterActivities(e.target.value);
+    });
+
+    showAllBtn && showAllBtn.addEventListener('click', () => { searchInput.value=''; filterActivities(''); });
+    sportsFilter && sportsFilter.addEventListener('click', () => { searchInput.value=''; filterActivities('deporte'); });
+    cultureFilter && cultureFilter.addEventListener('click', () => { searchInput.value=''; filterActivities('cultura'); });
+    scienceFilter && scienceFilter.addEventListener('click', () => { searchInput.value=''; filterActivities('ciencia'); });
+
+    
+    function addToCalendar(title, dateISO){
+      
+      let date = dateISO;
+      if (!date) {
+        date = prompt('Ingresa la fecha para agregar al calendario (YYYY-MM-DD):', '');
+        if (!date) { alert('Operación cancelada.'); return; }
+      }
+      alert('Actividad "' + title + '" agregada a tu calendario (simulado) para ' + date + '.\nRecuerda actualizar el calendario real en la institución.');
+    }
+
+    
+    function exportCalendar(){
+      
+      let months = $all('.month').map(m => {
+        const name = m.dataset.month || m.querySelector('h5')?.textContent || 'Mes';
+        const items = Array.from(m.querySelectorAll('.events li')).map(li => '- ' + li.textContent.trim()).join('\\n');
+        return name + '\\n' + items;
+      }).join('\\n\\n');
+
+      const text = 'Calendario - Unidad Educativa Andrés de Santa Cruz\\n\\n' + months;
+      
+      const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'calendario_andres_de_santa_cruz.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    
+    function highlightMonth(){
+      const today = new Date();
+      const monthIndex = today.getMonth(); 
+      const monthNames = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+      const name = monthNames[monthIndex];
+      $all('.month').forEach(m=>{
+        if (m.dataset.month && m.dataset.month.toLowerCase() === name.toLowerCase()){
+          
+          $all('.month.open').forEach(x=>x.classList.remove('open'));
+          m.classList.add('open');
+          m.scrollIntoView({behavior:'smooth',block:'center'});
+        }
+      });
+    }
+
+    
+    window.addToCalendar = addToCalendar;
+    window.exportCalendar = exportCalendar;
+    window.highlightMonth = highlightMonth;
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      $all('.card').forEach((c, i) => {
+        c.style.opacity = '0';
+        setTimeout(()=>{ c.style.transition = 'opacity .45s ease, transform .45s ease'; c.style.opacity='1'; c.style.transform='translateY(0)'; }, 60 * i);
+      });
+    });
+
+  </script>
+</body>
+</html>
